@@ -11,18 +11,32 @@ const eqArrays = (actual, expected) => {
   if(actual.length !== expected.length) {
     return false;
   } else {
-
+    
     for (let i = 0; i < actual.length; i++) {
-      if(actual[i] !== expected[i]) {
-        return false;
+      // Use of recursion: base case when is not an array anymore
+      if (Array.isArray(actual[i])) {
+        if (!eqArrays(actual[i], expected[i])) {
+          return false;
+        };
+      } 
+      // Now we just compare the elements of the array
+      else {
+        if (actual[i] !== expected[i]) {
+          return false;
+        }
       }
     }
   return true;
   }
 };
 
-// eqArrays([1, 2, 3], [1, 2, 3]) // => true
-// eqArrays([1, 2, 3], [3, 2, 1]) // => false
-console.log(eqArrays([1, 2, 3], [1, 2, 3]))
-console.log(eqArrays([1, 2, 3], [3, 2, 1]))
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+
+// TESTS --------------------------------------------------------------
+console.log(eqArrays([[2, 3], [4]], [[2, 3], [4]])); // => true
+console.log(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]])); // => false
+console.log(eqArrays([[2, 3], [4]], [[2, 3], 4])); // => false
+console.log(eqArrays([[1, [2, [4]]], 3], [[1, [2, [4]]], 3])); // => true
+
+
+console.log(eqArrays([1, 2, 3], [1, 2, 3])) // => true
+console.log(eqArrays([1, 2, 3], [3, 2, 1])) // => false
