@@ -6,6 +6,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+// Stretch for later. Try to use for(const [key, val] of Object.entries(object))
 const findKey = (object, callback) => {
   const keys = Object.keys(object);
   for(const k of keys) {
