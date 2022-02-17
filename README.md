@@ -12,11 +12,11 @@ This project was created and published by me as part of my learnings at Lighthou
 
 **Install it:**
 
-`npm install @hseiji/lotide`
+`npm install @henrique.taka/lotide`
 
 **Require it:**
 
-`const _ = require('@hseiji/lotide');`
+`const _ = require('@henrique.taka/lotide');`
 
 **Call it:**
 
@@ -29,9 +29,6 @@ The following functions are currently implemented:
 * `head(array)`: function that takes in an array and returns the first element in the array.
 * `tail(array)`: function that takes in an array and returns everything except the first element of the array.
 * `middle(array)`: function that takes in an array and returns middle most element of the array.
-* `assertArraysEqual(actual, expected)`: function that takes in 2 arrays and returns true if they are equal and false otherwise.
-* `assertEqual(actual, expected)`: function that takes in 2 values and returns true if they are equal and false otherwise.
-* `assertObjectsEqual(actual, expected)`: function that takes in 2 objects and returns true if they are equal and false otherwise.
 * `countLetters(array)`: function that takes in a sentence and returns a count of each of the letters in the sentence.
 * `countOnly(array)`: function that takes in a collection of items and returns a specific subset of those items.
 * `eqArrays(actual, expected)`: function that takes in 2 arrays and returns true if the arrays are equal and false otherwise.
